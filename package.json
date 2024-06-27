@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:vorbose": "jest --vorbose",
+    "test:vorbose": "jest --verbos",
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
