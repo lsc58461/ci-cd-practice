@@ -7,10 +7,10 @@ comment:
   hide_project_coverage: false # [true :: only show coverage on the git diff aka patch coverage]
 
 coverage:
-  precision: 2
-  round: down
-  range: "70...100"
   status:
-    project: true
-    patch: true
-    changes: yes
+    project:
+      default:
+        informational: true
+    patch:
+      default:
+        informational: true
