@@ -20,7 +20,7 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "baseUrl": "./"
+    "baseUrl": "http://localhost:3000"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
