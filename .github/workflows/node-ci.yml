@@ -26,5 +26,11 @@ jobs:
         run: npm run build --if-present
 
       - name: Run test script
-        run: npm test
-      
+        run: npm run test:vorbose --coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          verbose: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
