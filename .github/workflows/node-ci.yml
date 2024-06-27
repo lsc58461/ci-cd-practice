@@ -2,6 +2,13 @@ name: Node.js CI
 
 on: [push, pull_request]
 
+comment:
+  layout: "reach, diff, flags, files, footer"
+  behavior: default
+  require_changes: no
+  require_base: no
+  require_head: yes
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -31,12 +38,5 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           verbose: true
-          layout: " diff, flags, files"
-          behavior: default
-          require_changes: false # if true: only post the comment if coverage changes
-          require_base: false # [true :: must have a base report to post]
-          require_head: true # [true :: must have a head report to post]
-          hide_project_coverage: false # [true :: only show coverage on the git diff aka patch coverage]]
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
