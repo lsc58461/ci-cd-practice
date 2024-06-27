@@ -2,13 +2,6 @@ name: Node.js CI
 
 on: [push, pull_request]
 
-comment:
-  layout: "reach, diff, flags, files, footer"
-  behavior: default
-  require_changes: no
-  require_base: no
-  require_head: yes
-
 jobs:
   test:
     runs-on: ubuntu-latest
