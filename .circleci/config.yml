@@ -8,7 +8,7 @@ orbs:
 
 jobs:
   cypress-run:
-    parallelism: 4 # use 4 CircleCI machines to finish quickly
+    parallelism: 4
 
     executor:
       name: cypress/default
