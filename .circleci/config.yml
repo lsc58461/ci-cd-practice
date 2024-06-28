@@ -18,9 +18,9 @@ jobs:
       - cypress/install
       - cypress/run-tests:
           start-command: "npm run build && npm run start"
-          cypress-command: "npx wait-on@latest http://localhost:3000 && npx cypress run"
+          cypress-command: "npx wait-on@latest http://localhost:3000 && npx cypress run --parallel --record --group all tests"
 
 workflows:
   build:
     jobs:
-      - cypress/run
+      - cypress-run
