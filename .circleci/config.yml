@@ -8,13 +8,15 @@ orbs:
 
 jobs:
   cypress-run:
+    parallelism: 4 # use 4 CircleCI machines to finish quickly
+
     executor:
       name: cypress/default
       node-version: "20.15.0"
 
     steps:
       - cypress/install
-      - cypress/run-test:
+      - cypress/run-tests:
           cypress-command: "npx wait-on@latest http://localhost:3000 && npx cypress run --parallel --record --group all tests"
           start-command: "npm run build && npm run start"
 
